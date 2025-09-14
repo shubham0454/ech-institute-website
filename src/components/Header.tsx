@@ -8,6 +8,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 
 export default function Header() {
@@ -60,6 +62,27 @@ export default function Header() {
                 <ExternalLink className="ml-auto size-4 opacity-70" aria-hidden="true" />
               </Link>
             </DropdownMenuItem>
+            <DropdownMenuGroup>
+              <DropdownMenuLabel>Podcasts</DropdownMenuLabel>
+              <DropdownMenuItem asChild className="cursor-pointer ml-2">
+                <Link href="https://www.ethcatherders.com/peepaneip" target="_blank" rel="noopener noreferrer">
+                  <span>PEEPanEIP</span>
+                  <ExternalLink className="ml-auto size-4 opacity-70" aria-hidden="true" />
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="cursor-pointer ml-2">
+                <Link href="https://www.youtube.com/playlist?list=PL4cwHXAawZxrhbMXuCqMsCiwx1lwu_cNs" target="_blank" rel="noopener noreferrer">
+                  <span>Ecosystem Project Demos</span>
+                  <ExternalLink className="ml-auto size-4 opacity-70" aria-hidden="true" />
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="cursor-pointer ml-2">
+                <Link href="https://www.ethcatherders.com/podcast" target="_blank" rel="noopener noreferrer">
+                  <span>All Podcasts</span>
+                  <ExternalLink className="ml-auto size-4 opacity-70" aria-hidden="true" />
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
             <DropdownMenuItem asChild className="cursor-pointer">
               <Link href="/reports/First_Annual_Report_ECH_Institute_Inc.pdf" target="_blank" rel="noopener noreferrer">
                 <span>First Annual Report</span>
