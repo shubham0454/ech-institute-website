@@ -1,8 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,6 +41,38 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Typography - Standardized to Inter for consistency */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-family-mono: var(--font-geist-mono), 'Courier New', monospace;
+  --font-family-nav: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  
+  /* Font Sizes - Responsive */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.875rem);
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --font-size-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 3rem);
+  --font-size-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3.75rem);
+  --font-size-5xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
 }
 
 :root {
@@ -79,6 +108,66 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* ==========================================
+     ECH Institute - Global CSS Variables
+     ========================================== */
+  /* Primary Colors - White (60%), Black (30%), Yellow (10%) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-yellow: #facc14;
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: #f7f9fa;
+  --bg-light-yellow: #fefbd6;
+  --bg-light-blue: #f0f4f8;
+  --bg-hover: #f0f2f5;
+  
+  /* Text Colors */
+  --text-primary: #000000;
+  --text-secondary: #4c5663;
+  --text-muted: #4a5568;
+  --text-white: #ffffff;
+  
+  /* Border Colors */
+  --border-primary: #ced2d9;
+  --border-yellow: #facc14;
+  --border-black: #000000;
+  --border-divider: #e5e7eb;
+  
+  /* Icon Colors */
+  --icon-primary: #4c5663;
+  --icon-yellow: #facc14;
+  --icon-white: #ffffff;
+  
+  /* Accent Colors */
+  --accent-yellow: #facc14;
+  --accent-yellow-light: #fefbd6;
+  --accent-teal: #14b8a6;
+  
+  /* Card Colors */
+  --card-bg: #f7f9fa;
+  --card-border: #ced2d9;
+  --card-bg-hover: #fefbd6;
+  --card-border-hover: #facc14;
+  
+  /* Section Backgrounds */
+  --section-bg-light: #f9fafb;
+  --section-bg-white: #ffffff;
+  
+  /* Shadows */
+  --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 40px -10px rgba(250, 204, 20, 0.3);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 8px 24px -4px rgba(250, 204, 20, 0.2);
+  
+  /* Gradients */
+  --gradient-accent: linear-gradient(135deg, #facc14, #f9a825);
+  --gradient-card: linear-gradient(135deg, #ffffff, #f9fafb);
+  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  --gradient-yellow: linear-gradient(to bottom right, #fefbd6, #fef9c7);
 }
 
 .dark {
@@ -113,13 +202,463 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  /* ==========================================
+     ECH Institute - Dark Mode Variables
+     ========================================== */
+  /* Primary Colors - Dark Mode */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-yellow: #facc14;
+  
+  /* Background Colors - Dark Mode */
+  --bg-primary: oklch(0.145 0 0);
+  --bg-secondary: oklch(0.205 0 0);
+  --bg-card: oklch(0.205 0 0);
+  --bg-light-yellow: rgba(250, 204, 20, 0.15);
+  --bg-light-blue: oklch(0.269 0 0);
+  --bg-hover: oklch(0.269 0 0);
+  
+  /* Text Colors - Dark Mode */
+  --text-primary: oklch(0.985 0 0);
+  --text-secondary: oklch(0.708 0 0);
+  --text-muted: oklch(0.6 0 0);
+  --text-white: #ffffff;
+  
+  /* Border Colors - Dark Mode */
+  --border-primary: oklch(1 0 0 / 20%);
+  --border-yellow: #facc14;
+  --border-black: #000000;
+  --border-divider: oklch(1 0 0 / 15%);
+  
+  /* Icon Colors - Dark Mode */
+  --icon-primary: oklch(0.708 0 0);
+  --icon-yellow: #facc14;
+  --icon-white: #ffffff;
+  
+  /* Accent Colors - Dark Mode */
+  --accent-yellow: #facc14;
+  --accent-yellow-light: rgba(250, 204, 20, 0.15);
+  --accent-teal: #14b8a6;
+  
+  /* Card Colors - Dark Mode */
+  --card-bg: oklch(0.205 0 0);
+  --card-border: oklch(1 0 0 / 20%);
+  --card-bg-hover: oklch(0.269 0 0);
+  --card-border-hover: #facc14;
+  
+  /* Section Backgrounds - Dark Mode */
+  --section-bg-light: oklch(0.205 0 0);
+  --section-bg-white: oklch(0.145 0 0);
+  
+  /* Shadows - Dark Mode */
+  --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px -10px rgba(250, 204, 20, 0.2);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 8px 24px -4px rgba(250, 204, 20, 0.3);
+  
+  /* Gradients - Dark Mode */
+  --gradient-accent: linear-gradient(135deg, #facc14, #f9a825);
+  --gradient-card: linear-gradient(135deg, oklch(0.205 0 0), oklch(0.269 0 0));
+  --gradient-hero: linear-gradient(180deg, oklch(0.145 0 0) 0%, oklch(0.205 0 0) 100%);
+  --gradient-yellow: linear-gradient(to bottom right, rgba(250, 204, 20, 0.15), rgba(250, 204, 20, 0.1));
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-family-base) !important;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--text-primary);
+    background-color: white !important;
+  }
+  
+  /* Standardize all text to use Inter */
+  * {
+    font-family: var(--font-family-base) !important;
+  }
+  
+  /* Navigation specific font styling - Inter, bold, uppercase */
+  nav,
+  nav *,
+  nav a,
+  nav button,
+  nav span {
+    font-family: var(--font-family-nav) !important;
+    font-weight: 700 !important; /* Bold for navigation */
+  }
+  
+  /* Headings use base font (Inter) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base) !important;
+  }
+  
+  /* Body text and paragraphs */
+  p, span:not(nav span), div:not(nav div), li, td, th {
+    font-family: var(--font-family-base) !important;
+  }
+  
+  html {
+    background-color: white !important;
+  }
+  
+  /* Make all sections white background */
+  section {
+    background-color: white !important;
+  }
+  
+  /* Only cards have different background */
+  .card{
+    background-color: var(--card-bg) !important;
+  }
+  
+  /* Remove underline from all anchor tags */
+  a {
+    text-decoration: none !important;
+    color: inherit;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+  
+  /* Prevent blue color on visited links */
+  a:visited {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  
+  /* Prevent blue color on active links */
+  a:active {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  
+  a:hover {
+    opacity: 0.8;
+    text-decoration: none !important;
+    color: inherit;
+  }
+  
+  a:focus-visible {
+    outline: 2px solid var(--color-yellow);
+    outline-offset: 2px;
+    border-radius: 4px;
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  
+  /* Remove underline from navbar links when dropdown is open */
+  nav a,
+  nav button {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  /* Prevent blue color on navbar visited/active links */
+  nav a,
+  nav a:link,
+  nav a:visited,
+  nav a:active,
+  nav a:hover,
+  nav a:focus,
+  nav a:focus-visible {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  nav button:hover {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    color: inherit;
+  }
+  
+  /* Specific override for external links in navbar */
+  nav a[href^="http"]:visited,
+  nav a[href^="https"]:visited {
+    color: #4c5663 !important;
+  }
+  
+  nav a[href^="http"]:visited:hover,
+  nav a[href^="https"]:visited:hover {
+    color: #000000 !important;
+  }
+  
+  /* Button Base Styles - Theme Based */
+  button {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius);
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  button:focus-visible {
+    outline: 2px solid var(--color-yellow);
+    outline-offset: 2px;
+  }
+  
+  /* Primary Button */
+  .btn-primary,
+  button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost) {
+    background: var(--gradient-accent);
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover:not(:disabled),
+  button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost):hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    opacity: 0.95;
+  }
+  
+  .btn-primary:active:not(:disabled),
+  button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost):active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 2px solid var(--card-border);
+  }
+  
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--card-bg-hover);
+    border-color: var(--card-border-hover);
+  }
+  
+  /* Outline Button */
+  .btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--card-border);
+  }
+  
+  .btn-outline:hover:not(:disabled) {
+    background: var(--card-bg);
+    border-color: var(--color-yellow);
+    color: var(--color-yellow);
+  }
+  
+  /* Ensure Get Involved button has border */
+  a.btn-outline {
+    border: 2px solid var(--card-border) !important;
+  }
+  
+  a.btn-outline:hover {
+    border-color: var(--color-yellow) !important;
+  }
+  
+  /* Ghost Button */
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+  }
+  
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--card-bg);
+    color: var(--text-primary);
+  }
+  
+  /* Typography - Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base) !important;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-extrabold);
+  }
+  
+  h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  h4 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  h5 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  h6 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  /* Typography - Paragraphs */
+  p {
+    margin: 0;
+    line-height: var(--line-height-relaxed);
+    color: var(--text-secondary);
+  }
+  
+  /* Typography - Lists */
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: var(--font-size-3xl);
+    }
+    
+    h2 {
+      font-size: var(--font-size-2xl);
+    }
+    
+    h3 {
+      font-size: var(--font-size-xl);
+    }
+    
+    button {
+      padding: 0.5rem 1rem;
+      font-size: var(--font-size-sm);
+    }
+  }
+  
+  /* Dark Mode Button Adjustments */
+  .dark .btn-primary,
+  .dark button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dark .btn-primary:hover:not(:disabled),
+  .dark button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost):hover:not(:disabled) {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ==========================================
+     Common Button Styles
+     ========================================== */
+  .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 32px !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: var(--line-height-normal) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--color-yellow) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ==========================================
+     Container Styles
+     ========================================== */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  @media (max-width: 768px) {
+    .container,
+    .container-fluid {
+      padding: 0 20px;
+    }
+  }
+
+  /* ==========================================
+     Section Styles
+     ========================================== */
+  .section {
+    padding: 20px 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* @media (max-width: 768px) {
+    .section {
+      padding: 10px 0;
+    }
+  } */
+
+  /* ==========================================
+     Text Utilities
+     ========================================== */
+  .text-center {
+    text-align: center;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  /* ==========================================
+     Horizontal Overflow Prevention
+     ========================================== */
+  body {
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
