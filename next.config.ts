@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Explicitly use webpack instead of Turbopack
+  experimental: {
+    webpackBuildWorker: true,
+  },
   webpack: (config, { isServer, webpack }) => {
     // Fix for webpack runtime errors
     if (!isServer) {
@@ -27,6 +31,8 @@ const nextConfig: NextConfig = {
     
     return config;
   },
+  // Add empty turbopack config to silence the warning
+  turbopack: {},
 };
 
 export default nextConfig;
