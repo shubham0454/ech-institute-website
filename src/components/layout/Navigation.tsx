@@ -695,10 +695,13 @@ export default function Navigation() {
                     >
                       <span 
                         className={cn(
-                          'text-sm xl:text-base font-bold uppercase',
-                          pathname === item.link || hoveredNavItem === key ? 'text-black' : 'text-[#4c5663]'
+                          'text-sm xl:text-base font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663]',
+                          pathname === item.link || hoveredNavItem === key ? 'text-black visited:text-black active:text-black' : 'text-[#4c5663]'
                         )}
-                        style={{ fontFamily: 'var(--font-family-nav)' }}
+                        style={{ 
+                          fontFamily: 'var(--font-family-nav)', 
+                          color: pathname === item.link || hoveredNavItem === key ? '#000000' : '#4c5663'
+                        }}
                       >
                         {item.title}
                       </span>

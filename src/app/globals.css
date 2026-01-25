@@ -324,29 +324,31 @@
     background-color: var(--card-bg) !important;
   }
   
-  /* Remove underline from all anchor tags */
-  a {
+  /* Remove underline from all anchor tags and prevent blue colors */
+  a,
+  a:link,
+  a:visited,
+  a:active,
+  a:focus {
     text-decoration: none !important;
-    color: inherit;
+    color: inherit !important;
     transition: color 0.2s ease, opacity 0.2s ease;
   }
   
-  /* Prevent blue color on visited links */
+  /* Prevent browser default blue/purple colors on visited links */
   a:visited {
     color: inherit !important;
-    text-decoration: none !important;
   }
   
-  /* Prevent blue color on active links */
+  /* Prevent browser default blue color on active links */
   a:active {
     color: inherit !important;
-    text-decoration: none !important;
   }
   
   a:hover {
     opacity: 0.8;
     text-decoration: none !important;
-    color: inherit;
+    color: inherit !important;
   }
   
   a:focus-visible {
@@ -357,41 +359,79 @@
     color: inherit !important;
   }
   
-  /* Remove underline from navbar links when dropdown is open */
-  nav a,
-  nav button {
-    text-decoration: none !important;
-    border-bottom: none !important;
-  }
-  
-  /* Prevent blue color on navbar visited/active links */
+  /* Remove underline from navbar links and prevent blue colors */
   nav a,
   nav a:link,
   nav a:visited,
   nav a:active,
-  nav a:hover,
   nav a:focus,
-  nav a:focus-visible {
-    color: inherit !important;
+  nav a:focus-visible,
+  nav button,
+  nav Link,
+  nav Link:visited,
+  nav Link:active {
     text-decoration: none !important;
     border-bottom: none !important;
   }
   
+  nav a:hover,
   nav button:hover {
     text-decoration: none !important;
     border-bottom: none !important;
-    color: inherit;
   }
   
-  /* Specific override for external links in navbar */
+  /* Specific override for external links in navbar - prevent blue */
+  nav a[href^="http"],
+  nav a[href^="https"],
+  nav a[href^="http"]:link,
+  nav a[href^="https"]:link,
   nav a[href^="http"]:visited,
-  nav a[href^="https"]:visited {
+  nav a[href^="https"]:visited,
+  nav a[href^="http"]:active,
+  nav a[href^="https"]:active,
+  nav a[href^="http"]:focus,
+  nav a[href^="https"]:focus {
     color: #4c5663 !important;
+    text-decoration: none !important;
   }
   
-  nav a[href^="http"]:visited:hover,
-  nav a[href^="https"]:visited:hover {
+  nav a[href^="http"]:hover,
+  nav a[href^="https"]:hover {
     color: #000000 !important;
+    text-decoration: none !important;
+  }
+  
+  /* Prevent blue color on all internal nav links and Next.js Link components */
+  nav a:not([href^="http"]):not([href^="https"]),
+  nav a:not([href^="http"]):not([href^="https"]):visited,
+  nav a:not([href^="http"]):not([href^="https"]):active,
+  nav a:not([href^="http"]):not([href^="https"]):focus {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  
+  /* Force color on all nav link children */
+  nav a span,
+  nav a span:visited,
+  nav a span:active {
+    color: inherit !important;
+  }
+  
+  /* Footer links - ensure white color */
+  footer a,
+  footer a:link,
+  footer a:visited,
+  footer a:active,
+  footer a:hover,
+  footer a:focus {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  footer Link,
+  footer Link:visited,
+  footer Link:active {
+    color: white !important;
   }
   
   /* Button Base Styles - Theme Based */
@@ -424,11 +464,24 @@
   
   /* Primary Button */
   .btn-primary,
-  button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost) {
+  button[type="submit"]:not(.btn-secondary):not(.btn-outline):not(.btn-ghost),
+  a.btn-primary {
     background: var(--gradient-accent);
-    color: var(--text-primary);
+    color: white !important;
     font-weight: var(--font-weight-semibold);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover:not(:disabled),
+  a.btn-primary:hover {
+    color: white !important;
+  }
+  
+  .btn-primary:active:not(:disabled),
+  a.btn-primary:active,
+  .btn-primary:visited,
+  a.btn-primary:visited {
+    color: white !important;
   }
   
   .btn-primary:hover:not(:disabled),

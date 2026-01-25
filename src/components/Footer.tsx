@@ -99,7 +99,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-white hover:text-white/80 transition-colors text-sm sm:text-base no-underline focus:outline-none focus-visible:outline-none"
-                    style={{ textDecoration: 'none' }}
+                    style={{ color: 'white', textDecoration: 'none' }}
                   >
                     {link.name}
                   </Link>

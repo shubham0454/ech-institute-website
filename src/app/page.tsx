@@ -62,7 +62,7 @@ export default function Home() {
             ECH Institute is uniquely positioned at the intersection of People, Process and Protocol. It operates to support Ethereum&apos;s governance participation, and protocol‑coordination infrastructure. As a neutral public good, it ensures the protocol remains accessible and decentralized as it scales.
           </p>
           <div className="hero-buttons animate-fade-up delay-3">
-            <a href="#mission" className="btn btn-primary">Learn More</a>
+            <a href="#mission" className="btn btn-primary" style={{ color: 'white' }}>Learn More</a>
             <a href="#involved" className="btn btn-outline">Get Involved</a>
           </div>
         </div>
