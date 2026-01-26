@@ -145,6 +145,7 @@ a:hover {
   display: none;
 }
 
+/* Hero section image padding - Modified for proper spacing and responsive display */
 .hero-image {
   position: relative;
   width: 40%;
@@ -243,7 +244,7 @@ a:hover {
 
 @media (min-width: 1400px) {
   .hero-content {
-    padding: 100px 60px 100px 80px;
+    padding: 100px 0px 100px 80px;
   }
 }
 
