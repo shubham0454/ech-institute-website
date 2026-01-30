@@ -57,7 +57,7 @@ export default function Header() {
             onMouseLeave={closeMenuWithDelay}
           >
             <DropdownMenuItem asChild className="cursor-pointer">
-              <Link href="https://blog.ethcatherders.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://blog.echinstitute.org" target="_blank" rel="noopener noreferrer">
                 <span>Blog</span>
                 <ExternalLink className="ml-auto size-4 opacity-70" aria-hidden="true" />
               </Link>
