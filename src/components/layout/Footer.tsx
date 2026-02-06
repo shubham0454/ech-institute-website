@@ -54,36 +54,36 @@ export default function Footer() {
 
   return (
     <footer className="w-full border-t border-[#ced2d9]" style={{ backgroundColor: '#3d3d3d' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-0 lg:px-8 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         {/* Top Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
           {/* Brand Section - col-6 */}
-          <div className="sm:col-span-6">
-            <div className="mb-4">
-              <div className="mb-4 flex items-center gap-3">
+          <div className="md:col-span-6 lg:col-span-6">
+            <div className="mb-4 sm:mb-6">
+              <div className="mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
                 <Image
                   src="/assets/ech_full_logo.png"
                   alt="ECH Institute Logo"
                   width={48}
                   height={48}
-                  className="h-12 w-12 object-contain"
+                  className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 object-contain flex-shrink-0"
                   style={{ background: 'transparent'}}
                 />
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-0">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-0 leading-tight">
                   ECH Institute
                 </h2>
               </div>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-4 sm:mb-6 leading-relaxed">
                 Herding Knowledge, Building Community, Homesteading Ethereum!
               </p>
-              {/* Paws Image - Larger */}
-              <div className="mb-6 w-full">
+              {/* Paws Image - Responsive with reduced height */}
+              <div className="mb-4 sm:mb-6 w-full max-w-xs sm:max-w-sm lg:max-w-md">
                 <Image
                   src="/assets/images/paws.png"
                   alt="Paws"
                   width={300}
-                  height={150}
-                  className="h-auto"
+                  height={100}
+                  className="w-full h-auto object-contain max-h-20 sm:max-h-24 lg:max-h-28"
                   style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </div>
@@ -91,14 +91,14 @@ export default function Footer() {
           </div>
 
           {/* Links Section - col-2 */}
-          <div className="sm:col-span-2 mt-8 sm:mt-0">
-            <h3 className="text-base sm:text-lg font-bold text-white mb-4">Links</h3>
-            <ul className="space-y-2 sm:space-y-3 pl-0 list-none -ml-4 sm:-ml-6 lg:-ml-8">
+          <div className="md:col-span-3 lg:col-span-2 mt-6 md:mt-0">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-3 sm:mb-4">Links</h3>
+            <ul className="space-y-2 sm:space-y-3 list-none pl-0">
               {footerLinks.map((link) => (
-                <li key={link.name} className="pl-0">
+                <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white hover:text-white/80 transition-colors text-sm sm:text-base no-underline focus:outline-none focus-visible:outline-none"
+                    className="text-white hover:text-white/80 transition-colors text-xs sm:text-sm md:text-base no-underline focus:outline-none focus-visible:outline-none block"
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     {link.name}
@@ -109,9 +109,9 @@ export default function Footer() {
           </div>
 
           {/* Follow Us Section - col-4 */}
-          <div className="sm:col-span-4 mt-8 sm:mt-0">
-            <h3 className="text-base sm:text-lg font-bold text-white mb-4">Follow Us</h3>
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
+          <div className="md:col-span-3 lg:col-span-4 mt-6 md:mt-0">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-3 sm:mb-4">Follow Us</h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
               {socialLinks.map((social) => {
                 return (
                   <a
@@ -119,40 +119,42 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-white/50 p-3 rounded-full text-white hover:border-white transition-colors focus:outline-none focus-visible:outline-none no-underline flex items-center justify-center [&_svg]:text-white [&_svg]:fill-white [&_svg]:stroke-white"
+                    className="border border-white/50 p-2 sm:p-2.5 lg:p-3 rounded-full text-white hover:border-white hover:bg-white/10 transition-all focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 no-underline flex items-center justify-center [&_svg]:text-white [&_svg]:fill-white [&_svg]:stroke-white"
                     aria-label={social.name}
                     tabIndex={0}
                     style={{ color: 'white' }}
                   >
-                    {social.svg}
+                    <span className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full">
+                      {social.svg}
+                    </span>
                   </a>
                 );
               })}
             </div>
-            <div className="mt-6">
-              <h4 className="text-xs sm:text-sm font-semibold text-white mb-2">Email Us</h4>
+            <div className="mt-4 sm:mt-6">
+              <h4 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3">Email Us</h4>
               <a
-                href="mailto:support@ethereumcatherders.com"
-                className="text-white hover:text-white/80 transition-colors text-xs sm:text-sm lg:text-base break-all no-underline focus:outline-none focus-visible:outline-none"
+                href="mailto:team@ethcatherders.com"
+                className="text-white hover:text-white/80 transition-colors text-sm sm:text-base md:text-lg lg:text-xl break-all no-underline focus:outline-none focus-visible:outline-none block"
                 style={{ color: 'white', textDecoration: 'none' }}
               >
-                support@ethereumcatherders.com
+                team@ethcatherders.com
               </a>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/20 "></div>
+        <div className="border-t border-white/20 my-4 sm:my-6 lg:my-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left py-3">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs sm:text-sm text-white">
-            {/* <span>v3.0.0</span>
-            <span className="hidden sm:inline">•</span> */}
-            <span className="text-center sm:text-left">All content and resources on our website are for educational purposes only.</span>
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-3 sm:gap-4 text-center sm:text-left py-2 sm:py-3">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 lg:gap-4 text-xs sm:text-sm md:text-base text-white/90 max-w-2xl">
+            <span className="text-center sm:text-left leading-relaxed">
+              All content and resources on our website are for educational purposes only.
+            </span>
           </div>
-          <div className="text-xs text-white text-center sm:text-sm py-1">
+          <div className="text-xs sm:text-sm md:text-base text-white/90 whitespace-nowrap">
             <span>&copy; {currentYear} ECH Institute, Inc.</span>
           </div>
         </div>

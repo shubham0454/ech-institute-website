@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
-import './home-styles.css';
+import './home-page-styles.css';
 // import MembersSlider from '@/components/MembersSlider';
-import CardSlider from '@/components/CardSlider';
+import CardSlider from '@/components/features/CardSlider';
+import { Settings, ShieldCheck, Clock } from 'lucide-react';
 
 export default function Home() {
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function Home() {
 
       {/* Mission Section */}
       <section className="section" id="mission">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="section-header">
             <h2 className="section-title text-center">Our Mission</h2>
             <p className="section-subtitle text-center">
@@ -82,7 +83,7 @@ export default function Home() {
 
       {/* Role Section */}
       <section id="role" className="role-section">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center role-header">
             <h2 className="role-main-title">Our Role in the Ethereum Ecosystem</h2>
             <p className="role-intro-text">
@@ -112,74 +113,71 @@ export default function Home() {
       <section>
         <div className="role-focus-box">
           <h3 className="role-focus-title">We Double Down On</h3>
-          <div className="container-fluid">
-            <div className="row role-focus-grid">
-              {/* Left Column - Cards and Footer (col-10) */}
-              <div className="col-12 col-md-10 role-focus-content-column">
-                <div className="row">
-                  {/* First Column of Cards */}
-                  <div className="col-12 col-md-6 role-focus-column">
-                    <div className="role-focus-item">
-                      <span className="check-icon-large">✓</span>
-                      <div>
-                        <h4 className="role-focus-item-title">Process Clarity as Public Infrastructure</h4>
-                        <p className="role-focus-item-desc">Strengthening how Ethereum governs itself</p>
-                      </div>
-                    </div>
-                    <div className="role-focus-item">
-                      <span className="check-icon-large">✓</span>
-                      <div>
-                        <h4 className="role-focus-item-title">Long-term EIP Stewardship</h4>
-                        <p className="role-focus-item-desc">Documentation, review, and standardization</p>
-                      </div>
-                    </div>
-                    <div className="role-focus-item">
-                      <span className="check-icon-large">✓</span>
-                      <div>
-                        <h4 className="role-focus-item-title">Protocol Translation</h4>
-                        <p className="role-focus-item-desc">For institutional stakeholders and enterprises</p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Second Column of Cards */}
-                  <div className="col-12 col-md-6 role-focus-column">
-                    <div className="role-focus-item">
-                      <span className="check-icon-large">✓</span>
-                      <div>
-                        <h4 className="role-focus-item-title">Formal Participation Pathways</h4>
-                        <p className="role-focus-item-desc">Opening governance to more contributors</p>
-                      </div>
-                    </div>
-                    <div className="role-focus-item">
-                      <span className="check-icon-large">✓</span>
-                      <div>
-                        <h4 className="role-focus-item-title">Diversity Through Onboarding</h4>
-                        <p className="role-focus-item-desc">Supporting women developers in protocol work</p>
-                      </div>
-                    </div>
-                    <div className="role-focus-item">
-                      <span className="check-icon-large">✓</span>
-                      <div>
-                        <h4 className="role-focus-item-title">Durable Artifacts</h4>
-                        <p className="role-focus-item-desc">Creating lasting content beyond meeting notes</p>
-                      </div>
-                    </div>
+          <div className="w-full px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full">
+              {/* First Column - 3 Cards (40%) */}
+              <div className="w-full lg:w-2/5 flex flex-col gap-4">
+                <div className="role-focus-item flex items-start gap-3">
+                  <span className="check-icon-large flex-shrink-0">✓</span>
+                  <div className="flex-1">
+                    <h4 className="role-focus-item-title">Process Clarity as Public Infrastructure</h4>
+                    <p className="role-focus-item-desc">Strengthening how Ethereum governs itself</p>
                   </div>
                 </div>
-                {/* Footer Box - After Cards */}
-                <div className="role-footer-box">
-                  <p className="role-footer-text">
-                    We do not set protocol direction. We support the systems that allow Ethereum to decide responsibly.
-                  </p>
+                <div className="role-focus-item flex items-start gap-3">
+                  <span className="check-icon-large flex-shrink-0">✓</span>
+                  <div className="flex-1">
+                    <h4 className="role-focus-item-title">Long-term EIP Stewardship</h4>
+                    <p className="role-focus-item-desc">Documentation, review, and standardization</p>
+                  </div>
+                </div>
+                <div className="role-focus-item flex items-start gap-3">
+                  <span className="check-icon-large flex-shrink-0">✓</span>
+                  <div className="flex-1">
+                    <h4 className="role-focus-item-title">Protocol Translation</h4>
+                    <p className="role-focus-item-desc">For institutional stakeholders and enterprises</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Second Column - 3 Cards (40%) */}
+              <div className="w-full lg:w-2/5 flex flex-col gap-4">
+                <div className="role-focus-item flex items-start gap-3">
+                  <span className="check-icon-large flex-shrink-0">✓</span>
+                  <div className="flex-1">
+                    <h4 className="role-focus-item-title">Formal Participation Pathways</h4>
+                    <p className="role-focus-item-desc">Opening governance to more contributors</p>
+                  </div>
+                </div>
+                <div className="role-focus-item flex items-start gap-3">
+                  <span className="check-icon-large flex-shrink-0">✓</span>
+                  <div className="flex-1">
+                    <h4 className="role-focus-item-title">Diversity Through Onboarding</h4>
+                    <p className="role-focus-item-desc">Supporting women developers in protocol work</p>
+                  </div>
+                </div>
+                <div className="role-focus-item flex items-start gap-3">
+                  <span className="check-icon-large flex-shrink-0">✓</span>
+                  <div className="flex-1">
+                    <h4 className="role-focus-item-title">Durable Artifacts</h4>
+                    <p className="role-focus-item-desc">Creating lasting content beyond meeting notes</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Right Column - Image (col-2) */}
-              <div className="col-12 col-md-2 role-focus-image-column">
-                <div className="role-focus-image">
-                  <img src="/assets/images/cat_peek.png" alt="Cat Peek" />
+              {/* Third Column - Image (20%) */}
+              <div className="w-full lg:w-1/5 flex items-center justify-center">
+                <div className="role-focus-image w-full">
+                  <img src="/assets/images/cat-peek.webp" alt="Cat Peek" className="w-full h-auto object-contain" />
                 </div>
               </div>
+            </div>
+            
+            {/* Footer Box - Full Width Below Cards */}
+            <div className="role-footer-box mt-6 lg:mt-8">
+              <p className="role-footer-text">
+                We do not set protocol direction. We support the systems that allow Ethereum to decide responsibly.
+              </p>
             </div>
           </div>
         </div>
@@ -187,9 +185,9 @@ export default function Home() {
 
       
       <section className="boundaries-section">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 boundaries-column">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center">
+            <div className="w-full lg:w-1/2 boundaries-column">
             <h2 className="boundaries-title">Our Boundaries</h2>
 
               <p className="boundaries-intro">
@@ -216,7 +214,7 @@ export default function Home() {
                 <p className="boundaries-highlight-text">Our role is support, clarity, and stewardship — not authority.</p>
               </div>
             </div>
-            <div className="col-lg-6 boundaries-image-column">
+            <div className="w-full lg:w-1/2 boundaries-image-column">
               <div className="boundaries-image-wrapper">
                 <img src="/assets/EIP Summit Group Photo.webp" alt="Our Boundaries" />
               </div>
@@ -227,9 +225,9 @@ export default function Home() {
 
       {/* EF Section */}
       <section className="ef-section">
-        <div className="container">
-          <div className="row align-items-stretch">
-            <div className="col-lg-5 ef-image-column">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-stretch">
+            <div className="w-full lg:w-5/12 ef-image-column">
               <div className="ef-image-wrapper">
                 <img 
                   src="/assets/How We Work with EF.webp" 
@@ -237,7 +235,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="col-lg-7 ef-column">
+            <div className="w-full lg:w-7/12 ef-column">
               <div className="ef-content-wrapper">
                 <h2 className="ef-title">How We Work with the Ethereum Foundation</h2>
                 <p className="ef-intro-text">
@@ -283,7 +281,7 @@ export default function Home() {
 
       {/* Why Section */}
       <section className="why-section-alt">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="why-content-wrapper">
             <h2 className="why-title-alt">Why ECH Institute</h2>
             <p className="why-intro-alt">
@@ -294,22 +292,22 @@ export default function Home() {
 
             <div className="why-trusted-section">
               <h3 className="why-trusted-title">ECH Institute is trusted because we combine:</h3>
-              <div className="row why-trusted-grid">
-                <div className="col-md-4 why-trusted-card">
+              <div className="flex flex-wrap lg:flex-nowrap gap-4 sm:gap-6 lg:gap-8 why-trusted-grid">
+                <div className="w-full sm:w-full lg:w-1/3 lg:flex-shrink-0 why-trusted-card">
                   <div className="why-trusted-icon">
-                    <i className="bi bi-gear"></i>
+                    <Settings className="w-10 h-10 sm:w-12 sm:h-12" />
                   </div>
                   <p className="why-trusted-text">Deep operational experience inside protocol processes</p>
                 </div>
-                <div className="col-md-4 why-trusted-card">
+                <div className="w-full sm:w-full lg:w-1/3 lg:flex-shrink-0 why-trusted-card">
                   <div className="why-trusted-icon">
-                    <i className="bi bi-shield-check"></i>
+                    <ShieldCheck className="w-10 h-10 sm:w-12 sm:h-12" />
                   </div>
                   <p className="why-trusted-text">Neutral nonprofit positioning</p>
                 </div>
-                <div className="col-md-4 why-trusted-card">
+                <div className="w-full sm:w-full lg:w-1/3 lg:flex-shrink-0 why-trusted-card">
                   <div className="why-trusted-icon">
-                    <i className="bi bi-clock-history"></i>
+                    <Clock className="w-10 h-10 sm:w-12 sm:h-12" />
                   </div>
                   <p className="why-trusted-text">Long‑term stewardship mindset</p>
                 </div>
@@ -325,7 +323,7 @@ export default function Home() {
 
       {/* Who We Serve Section - Text Left, Image Right */}
       <section className="serve-section" id="serve">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="serve-header">
             <h2 className="serve-section-title">Who We Serve</h2>
             <p className="serve-section-subtitle">
@@ -404,7 +402,7 @@ export default function Home() {
 
       {/* Enterprise & Institutional View Section - Image Left, Text Right */}
       <section className="section enterprise-section">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="enterprise-layout">
             <div className="enterprise-image">
               <img src="/assets/Enterprise & Institutional View.webp" alt="Enterprise & Institutional View" />
@@ -443,7 +441,7 @@ export default function Home() {
 
       {/* Card Slider Section */}
       <section className="card-slider-section">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CardSlider />
         </div>
       </section>

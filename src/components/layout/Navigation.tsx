@@ -333,9 +333,24 @@ export default function Navigation() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
+  const [navbarHeight, setNavbarHeight] = useState(80); // Default height
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Calculate navbar height dynamically
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      if (navbarRef.current) {
+        const height = navbarRef.current.offsetHeight;
+        setNavbarHeight(height);
+      }
+    };
+
+    updateNavbarHeight();
+    window.addEventListener('resize', updateNavbarHeight);
+    return () => window.removeEventListener('resize', updateNavbarHeight);
   }, []);
 
   // Auto-close mobile menu when screen width becomes large
@@ -377,6 +392,7 @@ export default function Navigation() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navButtonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const navbarRef = useRef<HTMLElement>(null);
 
   // Handle smooth scrolling for hash links
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -395,7 +411,7 @@ export default function Navigation() {
       if (path === pathname || path === '') {
         const element = document.querySelector(hash);
         if (element) {
-          const navbarHeight = 64;
+          const navbarHeight = 80;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
           
@@ -553,24 +569,25 @@ export default function Navigation() {
   return (
     <>
       <nav 
+        ref={navbarRef}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 border-b border-[#e2e8f0] bg-white h-16 shadow-sm transition-transform duration-300 ease-in-out",
+          "fixed top-0 left-0 right-0 z-50 border-b border-[#e2e8f0] bg-white shadow-sm transition-transform duration-300 ease-in-out",
           isNavbarVisible ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <div className="container max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 h-full">
-          <div className="flex items-center h-full relative w-full">
+        <div className="container max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 relative w-full">
             {/* LEFT SIDE: Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2 sm:gap-3 text-xl font-bold font-mono hover:text-[#facc14] transition-colors pr-2 sm:pr-4 lg:pr-12 z-10 flex-shrink-0 no-underline min-w-0"
+              className="flex items-center gap-2 sm:gap-3 font-bold hover:text-[#facc14] transition-colors pr-2 sm:pr-4 lg:pr-12 z-10 flex-shrink-0 no-underline min-w-0"
               style={{ textDecoration: 'none' }}
             >
               <span className="sr-only">ECH Institute</span>
               <img
                 src="/assets/ech_full_logo.png"
                 alt="ECH Institute"
-                className="h-7 sm:h-8 md:h-10 w-auto flex-shrink-0"
+                className="h-7 sm:h-8 md:h-10 lg:h-11 xl:h-12 w-auto flex-shrink-0"
                 onError={(e) => {
                   // Fallback to text if image fails to load
                   const target = e.target as HTMLImageElement;
@@ -585,7 +602,7 @@ export default function Navigation() {
                 }}
               />
               <span className={cn(
-                "text-xs sm:text-sm md:text-base lg:text-xl font-bold font-mono transition-colors inline whitespace-nowrap",
+                "font-[family-name:var(--font-family-nav)] font-bold transition-colors inline whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl",
                 mounted && theme === 'dark' 
                   ? 'text-white' 
                   : 'text-black'
@@ -594,8 +611,8 @@ export default function Navigation() {
               </span>
             </Link>
 
-            {/* CENTER: Menu Buttons - Centered in navbar (hidden on mobile, shown on desktop) */}
-            <div className="hidden lg:flex items-center gap-6 xl:gap-8 h-full absolute left-1/2 transform -translate-x-1/2">
+            {/* RIGHT: Menu Buttons - Right-aligned on desktop */}
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto">
               {Object.entries(menuItems).map(([key, item]) => {
                 // If item has subItems, use button with hover menu
                 // Otherwise, use Link for direct navigation
@@ -609,15 +626,19 @@ export default function Navigation() {
                       onMouseEnter={() => handleMenuEnter(key)}
                       onMouseLeave={handleMenuLeave}
                       className={cn(
-                        'text-sm xl:text-base font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 h-full flex items-center focus:outline-none focus-visible:outline-none focus:ring-0 no-underline whitespace-nowrap',
-                        'font-[family-name:var(--font-family-nav)]',
+                        'font-[family-name:var(--font-family-nav)] font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 flex items-center focus:outline-none focus-visible:outline-none focus:ring-0 no-underline whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl',
                         hoveredMenu === key
                           ? 'text-black'
                           : 'text-[#4c5663] hover:text-black'
                       )}
                       style={{ textDecoration: 'none', fontFamily: 'var(--font-family-nav)' }}
-                    >
-                      <span className="text-sm xl:text-base font-bold uppercase" style={{ fontFamily: 'var(--font-family-nav)' }}>{item.title}</span>
+                      >
+                      <span
+                        className="font-bold uppercase text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl"
+                        style={{ fontFamily: 'var(--font-family-nav)' }}
+                      >
+                        {item.title}
+                      </span>
                     </button>
                   );
                 } else {
@@ -637,14 +658,13 @@ export default function Navigation() {
                           }
                         }}
                         className={cn(
-                          'text-sm xl:text-base font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 h-full flex items-center no-underline focus:outline-none focus-visible:outline-none focus:ring-0 whitespace-nowrap',
-                          'font-[family-name:var(--font-family-nav)]',
+                          'font-[family-name:var(--font-family-nav)] font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 flex items-center no-underline focus:outline-none focus-visible:outline-none focus:ring-0 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl',
                           'text-[#4c5663] hover:text-black visited:text-[#4c5663] active:text-[#4c5663]'
                         )}
                         style={{ fontFamily: 'var(--font-family-nav)', color: '#4c5663', textDecoration: 'none' }}
                       >
                         <span 
-                          className="text-sm xl:text-base font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663]" 
+                          className="font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl" 
                           style={{ fontFamily: 'var(--font-family-nav)', color: '#4c5663' }}
                         >
                           {item.title}
@@ -680,8 +700,7 @@ export default function Navigation() {
                         setHoveredNavItem(null);
                       }}
                       className={cn(
-                        'text-sm xl:text-base font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 h-full flex items-center no-underline focus:outline-none focus-visible:outline-none focus:ring-0 whitespace-nowrap',
-                        'font-[family-name:var(--font-family-nav)]',
+                        'font-[family-name:var(--font-family-nav)] font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 flex items-center no-underline focus:outline-none focus-visible:outline-none focus:ring-0 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl',
                         'visited:text-[#4c5663] active:text-[#4c5663]',
                         pathname === item.link || hoveredNavItem === key
                           ? 'text-black visited:text-black active:text-black'
@@ -695,7 +714,7 @@ export default function Navigation() {
                     >
                       <span 
                         className={cn(
-                          'text-sm xl:text-base font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663]',
+                          'font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl',
                           pathname === item.link || hoveredNavItem === key ? 'text-black visited:text-black active:text-black' : 'text-[#4c5663]'
                         )}
                         style={{ 
@@ -762,7 +781,8 @@ export default function Navigation() {
           <>
             {/* Backdrop */}
             <div
-              className="hidden lg:block fixed inset-0 top-16 bg-black/20 z-40"
+              className="hidden lg:block fixed inset-0 bg-black/20 z-40"
+              style={{ top: `${navbarHeight}px` }}
               onMouseEnter={handleDropdownEnter}
               onMouseLeave={handleDropdownLeave}
             />
@@ -770,10 +790,10 @@ export default function Navigation() {
             {/* Mega Menu */}
             <div
               ref={dropdownRef}
-              className="hidden lg:block fixed inset-x-0 top-16 bg-[#f1f5f9] z-50 border-t border-[#e2e8f0] shadow-lg rounded-b-lg"
+              className="hidden lg:block fixed inset-x-0 bg-[#f1f5f9] z-50 border-t border-[#e2e8f0] shadow-lg rounded-b-lg"
+              style={{ top: `${navbarHeight}px` }}
               onMouseEnter={handleDropdownEnter}
               onMouseLeave={handleDropdownLeave}
-              style={{ marginTop: '0' }}
             >
               <div className={cn(
                 "container max-w-[1400px] mx-auto px-4",
@@ -987,7 +1007,8 @@ export default function Navigation() {
         <>
           {/* Backdrop */}
           <div 
-              className="lg:hidden fixed inset-0 top-16 bg-black/20 z-[90]"
+              className="lg:hidden fixed inset-0 bg-black/20 z-[90]"
+              style={{ top: `${navbarHeight}px` }}
             onClick={() => {
               setIsMenuOpen(false);
               setOpenMobileMenu(null);
@@ -997,8 +1018,8 @@ export default function Navigation() {
           />
           {/* Mobile Menu */}
           <div 
-            className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-white border-t border-[#ced2d9] z-[100] overflow-y-auto shadow-lg"
-            style={{ display: 'block', visibility: 'visible', pointerEvents: 'auto' }}
+            className="lg:hidden fixed inset-x-0 bottom-0 bg-white border-t border-[#ced2d9] z-[100] overflow-y-auto shadow-lg"
+            style={{ top: `${navbarHeight}px`, display: 'block', visibility: 'visible', pointerEvents: 'auto' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="container max-w-7xl mx-auto px-2 sm:px-4 py-6">

@@ -42,11 +42,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Typography - Standardized to Inter for consistency */
-  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  /* Typography - Antonio for titles/nav, Roboto for subtitles */
+  --font-family-base: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'Antonio', sans-serif;
+  --font-family-subtitle: 'Roboto', sans-serif;
   --font-family-mono: var(--font-geist-mono), 'Courier New', monospace;
-  --font-family-nav: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-family-nav: 'Antonio', sans-serif;
   
   /* Font Sizes - Responsive */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -285,12 +286,12 @@
     background-color: white !important;
   }
   
-  /* Standardize all text to use Inter */
+  /* Base font - Roboto for body text */
   * {
     font-family: var(--font-family-base) !important;
   }
   
-  /* Navigation specific font styling - Inter, bold, uppercase */
+  /* Navigation specific font styling - Antonio, bold */
   nav,
   nav *,
   nav a,
@@ -300,12 +301,35 @@
     font-weight: 700 !important; /* Bold for navigation */
   }
   
-  /* Headings use base font (Inter) */
+  /* Headings use Antonio */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-base) !important;
+    font-family: var(--font-family-heading) !important;
   }
   
-  /* Body text and paragraphs */
+  /* Subtitles use Roboto */
+  .hero-subtitle,
+  .section-subtitle,
+  .subtitle,
+  .card-text,
+  .description,
+  p.subtitle,
+  .role-intro-text,
+  .serve-section-subtitle,
+  .enterprise-intro,
+  .boundaries-intro,
+  .ef-intro-text,
+  .why-intro-alt,
+  .quote-text,
+  .member-back-info,
+  .serve-card-description,
+  .role-card-description,
+  .ef-card-description,
+  .enterprise-footer-text,
+  .boundaries-note {
+    font-family: var(--font-family-subtitle) !important;
+  }
+  
+  /* Body text and paragraphs - Roboto */
   p, span:not(nav span), div:not(nav div), li, td, th {
     font-family: var(--font-family-base) !important;
   }
@@ -544,7 +568,7 @@
   
   /* Typography - Headings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-base) !important;
+    font-family: var(--font-family-heading) !important;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     color: var(--text-primary);
