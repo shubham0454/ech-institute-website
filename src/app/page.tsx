@@ -166,7 +166,7 @@ export default function Home() {
               </div>
 
               {/* Third Column - Image (20%) */}
-              <div className="w-full lg:w-1/5 flex items-center justify-center">
+              <div className="hidden lg:flex w-full lg:w-1/5 items-center justify-center">
                 <div className="role-focus-image w-full">
                   <img src="/assets/images/cat-peek.webp" alt="Cat Peek" className="w-full h-auto object-contain" />
                 </div>

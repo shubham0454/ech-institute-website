@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { arbitrum, base, mainnet, optimism, polygon } from 'viem/chains';
-import { toast } from './ui/use-toast';
+import { toast } from '@/components/ui/use-toast';
 import { waitForTransactionReceipt } from 'viem/actions';
 import { Loader2 } from 'lucide-react';
 
