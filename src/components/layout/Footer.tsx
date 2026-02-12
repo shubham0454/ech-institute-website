@@ -14,12 +14,12 @@ export default function Footer() {
     },
     { 
       name: 'GitHub', 
-      href: 'https://github.com/ethcatherders',
+      href: 'https://github.com/echinstitute',
       svg: <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
     },
     { 
       name: 'YouTube', 
-      href: 'https://youtube.com/@ethcatherders',
+      href: 'https://www.youtube.com/@echinstitute',
       svg: <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path></svg>
     },
     { 
@@ -39,7 +39,7 @@ export default function Footer() {
     },
     { 
       name: 'Warpcast', 
-      href: 'https://warpcast.com/ethcatherders',
+      href: 'https://farcaster.xyz/ethcatherders',
       svg: <svg width="20" height="20" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M257.778 155.556H742.222V844.445H671.111V528.889H670.414C662.554 441.677 589.258 373.333 500 373.333C410.742 373.333 337.446 441.677 329.586 528.889H328.889V844.445H257.778V155.556Z" fill="currentColor"></path><path d="M128.889 253.333L157.778 351.111H182.222V746.667C169.949 746.667 160 756.616 160 768.889V795.556H155.556C143.283 795.556 133.333 805.505 133.333 817.778V844.445H382.222V817.778C382.222 805.505 372.273 795.556 360 795.556H355.556V768.889C355.556 756.616 345.606 746.667 333.333 746.667H306.667V253.333H128.889Z" fill="currentColor"></path><path d="M675.556 746.667C663.282 746.667 653.333 756.616 653.333 768.889V795.556H648.889C636.616 795.556 626.667 805.505 626.667 817.778V844.445H875.556V817.778C875.556 805.505 865.606 795.556 853.333 795.556H848.889V768.889C848.889 756.616 838.94 746.667 826.667 746.667V351.111H851.111L880 253.333H702.222V746.667H675.556Z" fill="currentColor"></path></svg>
     },
   ];
@@ -54,13 +54,13 @@ export default function Footer() {
 
   return (
     <footer className="w-full border-t border-[#ced2d9]" style={{ backgroundColor: '#3d3d3d' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-4 sm:pb-6 lg:pb-8">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
           {/* Brand Section - col-6 */}
           <div className="md:col-span-6 lg:col-span-6">
-            <div className="mb-4 sm:mb-6">
-              <div className="mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+            <div className="mb-3 sm:mb-4">
+              <div className="mb-2 sm:mb-3 flex items-center gap-2 sm:gap-3">
                 <Image
                   src="/assets/ech_full_logo.png"
                   alt="ECH Institute Logo"
@@ -69,15 +69,15 @@ export default function Footer() {
                   className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 object-contain flex-shrink-0"
                   style={{ background: 'transparent'}}
                 />
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-0 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-0 leading-tight">
                   ECH Institute
                 </h2>
               </div>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white mb-3 sm:mb-4 leading-relaxed">
                 Herding Knowledge, Building Community, Homesteading Ethereum!
               </p>
               {/* Paws Image - Responsive with reduced height */}
-              <div className="mb-4 sm:mb-6 w-full max-w-xs sm:max-w-sm lg:max-w-md">
+              <div className="mb-2 sm:mb-3 w-full max-w-xs sm:max-w-sm lg:max-w-md">
                 <Image
                   src="/assets/images/paws.png"
                   alt="Paws"
@@ -91,14 +91,14 @@ export default function Footer() {
           </div>
 
           {/* Links Section - col-2 */}
-          <div className="md:col-span-3 lg:col-span-2 mt-6 md:mt-0">
-            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-3 sm:mb-4">Links</h3>
-            <ul className="space-y-2 sm:space-y-3 list-none pl-0">
+          <div className="md:col-span-3 lg:col-span-2 mt-4 md:mt-0">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">Links</h3>
+            <ul className="space-y-1.5 sm:space-y-2 list-none pl-0">
               {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white hover:text-white/80 transition-colors text-xs sm:text-sm md:text-base no-underline focus:outline-none focus-visible:outline-none block"
+                    className="text-white hover:text-white/80 transition-colors text-sm sm:text-base md:text-lg no-underline focus:outline-none focus-visible:outline-none block"
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     {link.name}
@@ -109,9 +109,9 @@ export default function Footer() {
           </div>
 
           {/* Follow Us Section - col-4 */}
-          <div className="md:col-span-3 lg:col-span-4 mt-6 md:mt-0">
-            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-3 sm:mb-4">Follow Us</h3>
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="md:col-span-3 lg:col-span-4 mt-4 md:mt-0">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">Follow Us</h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-4">
               {socialLinks.map((social) => {
                 return (
                   <a
@@ -131,11 +131,11 @@ export default function Footer() {
                 );
               })}
             </div>
-            <div className="mt-4 sm:mt-6">
-              <h4 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3">Email Us</h4>
+            <div className="mt-3 sm:mt-4">
+              <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">Email Us</h4>
               <a
                 href="mailto:team@ethcatherders.com"
-                className="text-white hover:text-white/80 transition-colors text-sm sm:text-base md:text-lg lg:text-xl break-all no-underline focus:outline-none focus-visible:outline-none block"
+                className="text-white hover:text-white/80 transition-colors text-base sm:text-lg md:text-xl lg:text-xl break-all no-underline focus:outline-none focus-visible:outline-none block"
                 style={{ color: 'white', textDecoration: 'none' }}
               >
                 team@ethcatherders.com
@@ -145,11 +145,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/20 my-4 sm:my-6 lg:my-8"></div>
+        <div className="border-t border-white/20 my-3 sm:my-4 lg:my-5"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-3 sm:gap-4 text-center sm:text-left py-2 sm:py-3">
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 lg:gap-4 text-xs sm:text-sm md:text-base text-white/90 max-w-2xl">
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left py-2 sm:py-3">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-white/90 max-w-2xl">
             <span className="text-center sm:text-left leading-relaxed">
               All content and resources on our website are for educational purposes only.
             </span>

@@ -632,9 +632,14 @@ export default function Navigation() {
                           : 'text-[#4c5663] hover:text-black'
                       )}
                       style={{ textDecoration: 'none', fontFamily: 'var(--font-family-nav)' }}
-                      >
+                    >
                       <span
-                        className="font-bold uppercase text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl"
+                        className={cn(
+                          'font-bold uppercase text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl transition-colors',
+                          hoveredMenu === key
+                            ? 'text-black'
+                            : 'text-[#4c5663]'
+                        )}
                         style={{ fontFamily: 'var(--font-family-nav)' }}
                       >
                         {item.title}
@@ -656,16 +661,31 @@ export default function Navigation() {
                           if (hoveredMenu) {
                             setHoveredMenu(null);
                           }
+                          setHoveredNavItem(key);
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredNavItem(null);
                         }}
                         className={cn(
                           'font-[family-name:var(--font-family-nav)] font-bold uppercase transition-colors rounded-md px-2 xl:px-3 py-2 flex items-center no-underline focus:outline-none focus-visible:outline-none focus:ring-0 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl',
-                          'text-[#4c5663] hover:text-black visited:text-[#4c5663] active:text-[#4c5663]'
+                          'visited:text-[#4c5663] active:text-[#4c5663]',
+                          hoveredNavItem === key
+                            ? 'text-black visited:text-black active:text-black'
+                            : 'text-[#4c5663] hover:!text-black visited:text-[#4c5663] active:text-[#4c5663]'
                         )}
-                        style={{ fontFamily: 'var(--font-family-nav)', color: '#4c5663', textDecoration: 'none' }}
+                        style={{ 
+                          fontFamily: 'var(--font-family-nav)', 
+                          textDecoration: 'none' 
+                        }}
                       >
                         <span 
-                          className="font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl" 
-                          style={{ fontFamily: 'var(--font-family-nav)', color: '#4c5663' }}
+                          className={cn(
+                            'font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl transition-colors',
+                            hoveredNavItem === key ? 'text-black visited:text-black active:text-black' : 'text-[#4c5663] hover:!text-black'
+                          )}
+                          style={{ 
+                            fontFamily: 'var(--font-family-nav)'
+                          }}
                         >
                           {item.title}
                         </span>
@@ -704,22 +724,20 @@ export default function Navigation() {
                         'visited:text-[#4c5663] active:text-[#4c5663]',
                         pathname === item.link || hoveredNavItem === key
                           ? 'text-black visited:text-black active:text-black'
-                          : 'text-[#4c5663] hover:text-black visited:text-[#4c5663] active:text-[#4c5663]'
+                          : 'text-[#4c5663] hover:!text-black visited:text-[#4c5663] active:text-[#4c5663]'
                       )}
                       style={{ 
                         fontFamily: 'var(--font-family-nav)', 
-                        color: pathname === item.link || hoveredNavItem === key ? '#000000' : '#4c5663',
                         textDecoration: 'none'
                       }}
                     >
                       <span 
                         className={cn(
-                          'font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl',
-                          pathname === item.link || hoveredNavItem === key ? 'text-black visited:text-black active:text-black' : 'text-[#4c5663]'
+                          'font-bold uppercase visited:text-[#4c5663] active:text-[#4c5663] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl transition-colors',
+                          pathname === item.link || hoveredNavItem === key ? 'text-black visited:text-black active:text-black' : 'text-[#4c5663] hover:!text-black'
                         )}
                         style={{ 
-                          fontFamily: 'var(--font-family-nav)', 
-                          color: pathname === item.link || hoveredNavItem === key ? '#000000' : '#4c5663'
+                          fontFamily: 'var(--font-family-nav)'
                         }}
                       >
                         {item.title}
@@ -1018,14 +1036,14 @@ export default function Navigation() {
           />
           {/* Mobile Menu */}
           <div 
-            className="lg:hidden fixed inset-x-0 bottom-0 bg-white border-t border-[#ced2d9] z-[100] overflow-y-auto shadow-lg"
+            className="lg:hidden fixed inset-x-0 bottom-0 bg-white border-t border-[#e2e8f0] z-[100] overflow-y-auto shadow-lg"
             style={{ top: `${navbarHeight}px`, display: 'block', visibility: 'visible', pointerEvents: 'auto' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="container max-w-7xl mx-auto px-2 sm:px-4 py-6">
               <div className="space-y-1">
                 {Object.entries(menuItems).map(([key, item]) => (
-                  <div key={key} className="border-b border-[#ced2d9] last:border-0">
+                  <div key={key} className="border-b border-[#e2e8f0] last:border-0">
                     {item.subItems && item.subItems.length > 0 ? (
                       <div className="py-2">
                         {/* Clickable header to toggle dropdown */}

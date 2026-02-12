@@ -120,47 +120,47 @@ export default function Home() {
                 <div className="role-focus-item flex items-start gap-3">
                   <span className="check-icon-large flex-shrink-0">✓</span>
                   <div className="flex-1">
-                    <h4 className="role-focus-item-title">Process Clarity as Public Infrastructure</h4>
-                    <p className="role-focus-item-desc">Strengthening how Ethereum governs itself</p>
-                  </div>
-                </div>
+                        <h4 className="role-focus-item-title">Process Clarity as Public Infrastructure</h4>
+                        <p className="role-focus-item-desc">Strengthening how Ethereum governs itself</p>
+                      </div>
+                    </div>
                 <div className="role-focus-item flex items-start gap-3">
                   <span className="check-icon-large flex-shrink-0">✓</span>
                   <div className="flex-1">
-                    <h4 className="role-focus-item-title">Long-term EIP Stewardship</h4>
-                    <p className="role-focus-item-desc">Documentation, review, and standardization</p>
-                  </div>
-                </div>
+                        <h4 className="role-focus-item-title">Long-term EIP Stewardship</h4>
+                        <p className="role-focus-item-desc">Documentation, review, and standardization</p>
+                      </div>
+                    </div>
                 <div className="role-focus-item flex items-start gap-3">
                   <span className="check-icon-large flex-shrink-0">✓</span>
                   <div className="flex-1">
-                    <h4 className="role-focus-item-title">Protocol Translation</h4>
-                    <p className="role-focus-item-desc">For institutional stakeholders and enterprises</p>
+                        <h4 className="role-focus-item-title">Protocol Translation</h4>
+                        <p className="role-focus-item-desc">For institutional stakeholders and enterprises</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
               
               {/* Second Column - 3 Cards (40%) */}
               <div className="w-full lg:w-2/5 flex flex-col gap-4">
                 <div className="role-focus-item flex items-start gap-3">
                   <span className="check-icon-large flex-shrink-0">✓</span>
                   <div className="flex-1">
-                    <h4 className="role-focus-item-title">Formal Participation Pathways</h4>
-                    <p className="role-focus-item-desc">Opening governance to more contributors</p>
-                  </div>
-                </div>
+                        <h4 className="role-focus-item-title">Formal Participation Pathways</h4>
+                        <p className="role-focus-item-desc">Opening governance to more contributors</p>
+                      </div>
+                    </div>
                 <div className="role-focus-item flex items-start gap-3">
                   <span className="check-icon-large flex-shrink-0">✓</span>
                   <div className="flex-1">
-                    <h4 className="role-focus-item-title">Diversity Through Onboarding</h4>
-                    <p className="role-focus-item-desc">Supporting women developers in protocol work</p>
-                  </div>
-                </div>
+                        <h4 className="role-focus-item-title">Diversity Through Onboarding</h4>
+                        <p className="role-focus-item-desc">Supporting women developers in protocol work</p>
+                      </div>
+                    </div>
                 <div className="role-focus-item flex items-start gap-3">
                   <span className="check-icon-large flex-shrink-0">✓</span>
                   <div className="flex-1">
-                    <h4 className="role-focus-item-title">Durable Artifacts</h4>
-                    <p className="role-focus-item-desc">Creating lasting content beyond meeting notes</p>
+                        <h4 className="role-focus-item-title">Durable Artifacts</h4>
+                        <p className="role-focus-item-desc">Creating lasting content beyond meeting notes</p>
                   </div>
                 </div>
               </div>
