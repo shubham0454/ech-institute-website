@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 @config "../../tailwind.config.ts";
 @import "tw-animate-css";
 
@@ -7993,7 +7993,7 @@ main .card-title,
    ========================================== */
 
 :root {
-  --nav-height: 5.5rem;
+  --nav-height: 97px;
 
   --surface-page-light: #FBFBFB;
   --surface-page-dark: #151419;
@@ -9995,7 +9995,7 @@ footer.footer-main .footer-social-icon:hover {
 /* ── Outer wrapper: fixed, slides with navbar via shared isNavbarVisible ── */
 .giveth-ticker-outer {
   position: fixed;
-  top: var(--nav-height, 5.5rem);
+  top: var(--nav-height, 97px);
   left: 0;
   right: 0;
   z-index: 49;

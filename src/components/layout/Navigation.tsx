@@ -1059,7 +1059,7 @@ export default function Navigation() {
         style={{
           transform: isNavbarVisible
             ? 'translateY(0)'
-            : 'translateY(calc(-1 * var(--nav-height, 5.5rem)))',
+            : 'translateY(calc(-1 * var(--nav-height, 97px)))',
         }}
       >
         <GivethTicker />

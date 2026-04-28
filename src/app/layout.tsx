@@ -172,7 +172,7 @@ export default function RootLayout({
             <header>
               <Navigation />
             </header>
-            <main className="w-full" style={{ paddingTop: 'calc(var(--nav-height, 5.5rem) + 36px)' }}>
+            <main className="w-full" style={{ paddingTop: 'calc(var(--nav-height, 97px) + 36px)' }}>
               {children}
             </main>
             <Footer />
