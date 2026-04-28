@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Syne, DM_Sans, Antonio } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
+import GivethTicker from "@/components/layout/GivethTicker";
 import Footer from "@/components/layout/Footer";
 import { Web3Provider } from "@/providers/Web3Provider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
@@ -171,7 +172,8 @@ export default function RootLayout({
             <header>
               <Navigation />
             </header>
-            <main className="w-full">
+            <GivethTicker />
+            <main className="w-full pt-9">
               {children}
             </main>
             <Footer />
