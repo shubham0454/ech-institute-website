@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ROUTES, EXTERNAL_LINKS } from '@/config/routes';
+import GivethTicker from '@/components/layout/GivethTicker';
 // import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 // ==========================================
@@ -1052,8 +1053,17 @@ export default function Navigation() {
           </div>
         </>
       )}
+      {/* ── Giveth QF Ticker: shares isNavbarVisible — slides in/out with the navbar ── */}
+      <div
+        className="giveth-ticker-outer"
+        style={{
+          transform: isNavbarVisible
+            ? 'translateY(0)'
+            : 'translateY(calc(-1 * var(--nav-height, 5.5rem)))',
+        }}
+      >
+        <GivethTicker />
+      </div>
     </>
   );
 }
-
-
